@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> ARARE playground </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+  <div class="flex-list">
+    <div class="flex-item">
+      <div id="canvas"></div>
+      <img src="image/arare.png" alt="ArareLogo" width="300" height="80" style="float:center">
+    </div>
+
+    <div class="flex-item">
+      <div id="editor">
+      </div>
+      <!-- https://cdn.rawgit.com/danklammer/bytesize-icons/master/examples/bytesize-inline.html -->
+
+    </div>
+
+    <div class="flex-sub">
+      <div class="flex-button">
+        <br>
+        <svg id="play" class="i-play" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+          <path d="M10 2 L10 30 24 16 Z" />
+        </svg>
+
+        <svg id="pause" class="i-pause" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+          <path d="M23 2 L23 30 M9 2 L9 30" />
+        </svg>
+
+        <svg id="reload" class="i-reload" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor"
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+          <path d="M29 16 C29 22 24 29 16 29 8 29 3 22 3 16 3 10 8 3 16 3 21 3 25 6 27 9 M20 10 L27 9 28 2" />
+        </svg>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
