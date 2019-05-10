@@ -120,6 +120,11 @@ html {
 	height   : 100% ;
 }
 
+div.flex-button img {
+  float: left;
+  margin: 0 0 0 7px;
+}
+
 svg {
   margin: 0.4em;
   overflow: visible;
