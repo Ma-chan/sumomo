@@ -4,10 +4,31 @@ import * as solarized_light from '../node_modules/ace-builds/src-min-noconflict/
 import * as marked from 'marked';
 /* editor */
 
+const path = location.pathname;
 const editor = ace.edit('editor');
 // editor.setTheme(solarized_light);
 editor.getSession().setUseWrapMode(true); /* 折り返しあり */
-// editor.setFontSize(24);
+editor.setFontSize(18);
+
+window.addEventListener('load', (e) => {
+  $.ajax({
+    url: '/problem' + path,
+    type: 'GET',
+  }).done((data) => {
+    document.getElementById('canvas').innerHTML = marked(data);
+  }).fail((data) => {
+    console.log(data);
+  }).always((data) => {
+  });
+  $.ajax({
+    url: '/code' + path,
+    type: 'GET',
+  }).done((data) => {
+    editor.setValue(data);
+  }).fail((data) => {
+    console.log(data);
+  }).always((data) => {
+  });
+});
 
 console.log(marked('# Marked in the browser\n\nRendered by **marked**.'));
-document.getElementById('canvas').innerHTML = marked('# Marked in the browser\n\nRendered by **marked**.');

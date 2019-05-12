@@ -34,7 +34,7 @@ html {
   flex: 0 0 48%;
   max-width: 48%; /* IE11バグ対応 */
   background-color: white;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .flex-sub{
