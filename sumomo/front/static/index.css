@@ -120,6 +120,11 @@ html {
 	height   : 100% ;
 }
 
+div.flex-button img {
+  float: left;
+  margin: 0 0 0 7px;
+}
+
 svg {
   margin: 0.4em;
   overflow: visible;
@@ -133,3 +138,4 @@ svg {
 .i-medium,
 .i-small { max-width: 50em; margin: 0 auto 2em }
 
+/* 登録フォーム */
