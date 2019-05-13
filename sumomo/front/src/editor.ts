@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import * as ace from '../node_modules/ace-builds/src-min-noconflict/ace.js';
 import * as solarized_light from '../node_modules/ace-builds/src-min-noconflict/theme-solarized_light.js';
+import * as python_mode from '../node_modules/ace-builds/src-min-noconflict/mode-python.js';
 import * as marked from 'marked';
 import * as auth from './auth';
 /* editor */
@@ -8,6 +9,7 @@ import * as auth from './auth';
 const path = location.pathname;
 const editor = ace.edit('editor');
 // editor.setTheme(solarized_light);
+editor.getSession().setMode(new python_mode.Mode());
 editor.getSession().setUseWrapMode(true); /* 折り返しあり */
 editor.setFontSize(18);
 
