@@ -13,7 +13,7 @@ editor.setFontSize(18);
 
 window.addEventListener('load', (e) => {
   $.ajax({
-    url: '/problem' + path,
+    url: `/proble${path}`,
     type: 'GET',
   }).done((data) => {
     document.getElementById('canvas').innerHTML = marked(data);
@@ -22,7 +22,7 @@ window.addEventListener('load', (e) => {
   }).always((data) => {
   });
   $.ajax({
-    url: '/code' + path,
+    url: `/code${path}`,
     type: 'GET',
   }).done((data) => {
     editor.setValue(data);
@@ -33,8 +33,6 @@ window.addEventListener('load', (e) => {
 });
 
 console.log(marked('# Marked in the browser\n\nRendered by **marked**.'));
-<<<<<<< HEAD
-=======
 document.getElementById('canvas').innerHTML = marked('# Marked in the browser\n\nRendered by **marked**.');
 
 const git_handler = new auth.GithubHandler();
@@ -42,4 +40,3 @@ const git_handler = new auth.GithubHandler();
 document.getElementById('github').addEventListener('click', () => {
   git_handler.singin();
 });
->>>>>>> fb71a2e6a2b3f35cd4c082b8898e3bf227207b88
