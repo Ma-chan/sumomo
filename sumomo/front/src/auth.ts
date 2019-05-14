@@ -24,21 +24,18 @@ export class GithubHandler{
     // provider.setCustomParameters({
     //   allow_signup: 'false',
     // });
-    (async () => {
-      try {
-        const { user, credential } = await firebase.auth().getRedirectResult();
-        this.credential = credential;
-        const user_info = await this.get_user_info();
-        alert(`こんにちは! ${user_info.name}さん!`);
-      } catch (err) {
-        console.log(err);
-        alert('ログインに失敗しました．');
-      }
-    })();
   }
 
   public singin () {
-    firebase.auth().signInWithRedirect(this.provider);
+    firebase.auth().signInWithPopup(this.provider).then((res) => {
+      this.credential = res.credential;
+      this.get_user_info().then((user_info) => {
+        alert(`こんにちは! ${user_info.name}さん!`);
+      });
+    }).catch((err) => {
+      console.log(err);
+      alert('ログインに失敗しました．');
+    });
   }
 
   public get_user_info() {
