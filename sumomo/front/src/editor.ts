@@ -38,3 +38,14 @@ const git_handler = new auth.GithubHandler();
 document.getElementById('github').addEventListener('click', () => {
   git_handler.singin();
 });
+let x = 100;
+
+document.getElementById('zoom-in').addEventListener('click', () => {
+  { x *= 1.2; document.getElementById('editor').style.fontSize = x + '%'; }
+
+});
+
+document.getElementById('zoom-out').addEventListener('click', () => {
+  { x /= 1.2; document.getElementById('editor').style.fontSize = x + '%'; }
+
+});
